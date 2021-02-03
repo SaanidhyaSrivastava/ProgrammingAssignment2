@@ -4,18 +4,13 @@
 ## Write a short comment describing this function
 
 makeCacheMatrix <- function(x = matrix()) {
-        ## @x: a square invertible matrix
-        ## return: a list containing functions to
-        ##              1. set the matrix
-        ##              2. get the matrix
-        ##              3. set the inverse
-        ##              4. get the inverse
-        ##         this list is used as the input to cacheSolve()
+        # x: a square invertible matrix
+        # return: a list containing functions to
+        # 1. set the matrix   2. get the matrix  3. set the inverse  4. get the inverse   this list is used as the input to cacheSolve()
         
         inv = NULL
         set = function(y) {
-                # use `<<-` to assign a value to an object in an environment 
-                # different from the current environment. 
+                # use `<<-` to assign a value to an object in an environment different from the current environment. 
                 x <<- y
                 inv <<- NULL
         }
@@ -29,8 +24,8 @@ makeCacheMatrix <- function(x = matrix()) {
 ## Write a short comment describing this function
 
 cacheSolve <- function(x, ...) {
-       ## @x: output of makeCacheMatrix()
-        ## return: inverse of the original matrix input to makeCacheMatrix()
+       # @x: output of makeCacheMatrix()
+       # return: inverse of the original matrix input to makeCacheMatrix()
         
         inv = x$getinv()
         
@@ -41,7 +36,6 @@ cacheSolve <- function(x, ...) {
                 return(inv)
         }
         
-        # otherwise, calculates the inverse 
         mat.data = x$get()
         inv = solve(mat.data, ...)
         
